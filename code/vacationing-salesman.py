@@ -34,7 +34,6 @@ def deter_distance(cities):
 
 f = open(args.cities, 'r')
 cities = f.read().splitlines()
-print cities
 
 distances = deter_distance(cities)
 

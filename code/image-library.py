@@ -3,9 +3,13 @@ import numpy as np
 import IPython
 
 class Image(object):
+	# Create image with basic parameters or with existing initial image
 	def __init__(self, w, h, pixel_format='', pixel_type='', initial=None):
 		""" initializes an image object """
 
+		"""
+		Checks for invalid types
+		"""
 		if not (isinstance(w, int) and isinstance(h, int)):
 			print "Width and height must be integer"
 			raise ValueError
@@ -19,12 +23,11 @@ class Image(object):
 			raise ValueError
 
 
-
 		self.__pixel_format = pixel_format
 		self.__pixel_type = pixel_type
 
+		# Initialize the new image with the given array (containing the data in the given image)
 		if initial != None:
-
 			self.__image = np.zeros((initial.shape[0],initial.shape[1],initial.shape[2]),dtype=initial.dtype)
 
 		else:
@@ -50,6 +53,7 @@ class Image(object):
 
 	def copy(self):
 		""" returns an identical copy of the image """
+		# Uses the current image as an initialization for the image copy
 		return Image(self.width(), self.height(), self.__pixel_format, self.__pixel_type, initial=self.__image)
 
 
@@ -75,9 +79,8 @@ class Image(object):
 		return
 
 
-
 def main():
-	image = Image(20, 30, 'boo', 'rgb')
+	image = Image(20, 30, 'int', 'rgb')
 	print image
 	print image.width()
 	print image.height()
@@ -85,7 +88,6 @@ def main():
 	print image.get(2, 3)
 	image.set(2, 3, [2, 3, 4])
 	print image.get(2,3)
-	print '--------'
 
 
 

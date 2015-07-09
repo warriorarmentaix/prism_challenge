@@ -1,0 +1,30 @@
+The Prism Team
+--------------
+
+The goal of this question is to write a script which will parse
+the Prism 'About Us' page and spit out a list of all employees at
+Prism, along with their job titles.
+
+The Prism 'About Us' page is accessible at https://prism.com/about/
+
+Your script should do a GET request over HTTPS to retrieve the most
+recent version of the 'About Us' page. It should parse it, then print
+out a list of each happy Prism employee and their title.
+
+Example interaction:
+
+    $ prism-about-us-scrapper
+    There are 34 people on the Prism team. They are:
+
+        Steve Russell, CEO & Founder
+        Mike Fogel, VP of Engineering
+        Bob Cutting, SVP of Operations
+        ...
+
+Please include a README in your submission that details:
+
+  * how to run your script
+  * why you choose the language you did
+  * what the primary design decisions were in implementing your solution
+    and why you made the choices you did
+  * if you ran out of time, what you were hoping to do next

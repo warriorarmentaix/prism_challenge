@@ -5,7 +5,9 @@ Challenge 1: The Prism Team
 
 How to run:
 Install beautifulsoup4 (Mac: sudo pip install beautifulsoup4) (Linux: sudo apt-get install python-bs4)
+
 Run python the-prism-team.py
+
 * When I tried to do a GET request over HTTPS for the most recent version of the 'About Us' page, I get a 'EOF occurred in violation of protocol' or Connection aborted.', error(54, 'Connection reset by peer') error. So I stored a copy of the HTML of the site in data/aboutus.txt and parses the HTML from the file instead. However, the methods I tried work on other websites such as 'https://yahoo.com' and 'https://google.com'
 
 Why I chose Python:

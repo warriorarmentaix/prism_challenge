@@ -13,12 +13,14 @@ args = parser.parse_args()
 
 
 def deter_distance(cities):
+	""" Returns a list of distances between cities """
 	geolocator = Nominatim()
 	distances = []
 	for i in xrange(len(cities)-1):
 		location1 = geolocator.geocode(cities[i])
 		location2 = geolocator.geocode(cities[i+1])
 
+		# Checks for if the city/location names could not be identified
 		if location1 == None:
 			print cities[i] + " could not be identified"
 			raise ValueError
@@ -26,8 +28,11 @@ def deter_distance(cities):
 			print cities[i+1] + " could not be identified"
 			raise ValueError
 		distance = vincenty((location1.latitude, location1.longitude), (location2.latitude, location2.longitude)).miles
+		
+		# Conversion to kilometers
 		if args.useKM:
 			distance = distance * 1.6
+
 		distances.append(distance)
 
 	return distances
